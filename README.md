@@ -14,13 +14,7 @@ The members of the team are:
 **The Study Spot** is a web application designed to facilitate online study sessions between students through virtual study rooms. Users can create and join rooms, share resources and work collaboratively with friends using our software. 
 
 ## Deployed Application
-The deployed version of the application can be found at *virtual-study-room-phi.vercel.app*.
-
-## Link to Report on Overleaf
-*https://www.overleaf.com/read/spwdstnrjkyt#0aa2c9*
-
-## Link to Developers Manual on Overleaf
-*https://www.overleaf.com/read/rkzmmqzqhjcr#640879*
+The deployed beta-version of the application can be found at *virtual-study-room-phi.vercel.app*.
 
 ## Default Logins for Testing
 Please note that in order to log in as multiple users you must use a new incognito window for each additional member, as only one user can be logged in at a time per browser. If you have forgotten to log out before closing the tab please refresh the login page to auto log out of all logged in accounts.
