@@ -1,13 +1,11 @@
 # THE STUDY SPOT ~ Team MANGOCAT
 ## Team members
-The members of the team are:
+The members currently working on this project are:
 - Aamukta Thogata
-- Agrima Khare
 - Isha Selvakumaran
 - Natalia Ahsan
 - Onessa Crispeyn
 - Prapti Patel
-- Yonna Khatri
 - Yuliia Bohak
 
 ## Project Overview
