@@ -1,0 +1,352 @@
+.Header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-shadow: 
+      0 0 2px rgba(255, 255, 255, 0.8),
+      0 0 8px rgba(186, 198, 241, 0.6),
+      0 0 12px rgba(186, 198, 241, 0.4),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-left: 0 !important; 
+  margin-right: auto !important; 
+  order: 0 !important; 
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #bac6f1 0%, #d1cbed 100%); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  top: 0;
+  left: 0;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 1000;
+  border: 3px solid #bac6f1;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  height: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.Page {
+  display: fixed;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box; /* Ensure padding/border don't increase its size */
+  background-color: #f6f0f0;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+
+button.addEventButton {
+  color: black !important;
+  font-family: "Inter", sans-serif !important;
+  background-color: #ffe7ac !important; /* Set background color */
+  border-radius: 30% !important; /* Rounded corners */
+  font-weight: bold !important; /* Make button text bold */
+  text-align: center;
+  border-color: #ffe7ac;
+  padding: 10px 20px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.rounded-event {
+  width: 70% !important; /* Adjust width, lower values make it thinner */
+  margin: 0 auto !important; /* Center the event */
+  border-color: black;
+  border-radius: 20px !important; /* Make edges more rounded */
+  text-align: center !important; /* Center text horizontally */
+  display: flex !important; /* Use flexbox */
+  align-items: center !important; /* Center text vertically */
+  justify-content: center !important; /* Ensure perfect centering */
+  font-weight: bold !important; /* Make text bold */
+  color: black !important; /* Set text color to black */
+}
+
+.rounded-event * {
+  color: black !important; /* Force black text inside the event */
+  align-items: center !important; /* Center text vertically */
+  justify-content: center !important;
+}
+
+.event-popup {
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 5px solid #f2bac9;
+  border-radius: 20px;
+  justify-content: center;
+  width: 400px; /* Set a fixed width for the popup */
+  max-width: 90%; /* Ensure it doesn't overflow on small screens */
+  z-index: 2005; /*ensures it is on top of dashboard heading*/
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  gap: 15px; /* Add space between elements */
+}
+
+.popup-content h2 {
+  font-family: "Inter", sans-serif;
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  z-index: 2002;
+}
+
+.popup-content form {
+  width: 100%; /* Make the form take full width of the popup */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add space between form elements */
+}
+
+.popup-content form div {
+  width: 100%; /* Make form inputs take full width */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Add space between label and input */
+}
+
+.popup-content form label {
+  font-weight: 600;
+  color: #333;
+}
+
+.popup-content form input,
+.popup-content form textarea {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #333;
+  width: 100%; /* Make inputs take full width */
+}
+
+.popup-content form textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 80px; /* Set a minimum height */
+}
+
+.popup-content button {
+  font-family: "Inter", sans-serif;
+  background-color: #f2e2ba; /* Light yellow background */
+  color: black;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Make buttons take full width */
+}
+
+.popup-content button:hover {
+  background-color: #BAD7F1; /* Darker red for button hover */
+}
+
+.popup-content button[type="button"] {
+  background-color: #f2bac9; /* Light pink for cancel button */
+}
+
+.popup-content button[type="button"]:hover {
+  background-color: #d89aa9; /* Darker pink on hover */
+}
+
+/* Calendar toolbar button styles */
+.fc-header-toolbar {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  /* color: #5D576B; */
+  background: linear-gradient(135deg, #bac6f1 0%, #d1cbed 100%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px 50px;
+  margin-bottom: 0 !important;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.8),
+    0 0 8px rgba(186, 198, 241, 0.6),
+    0 0 12px rgba(186, 198, 241, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.fc-toolbar .fc-button {
+  background-color: #bad7f2 !important;
+  border-color: #bad7f2 !important;
+  color: black !important;
+  border-radius: 30px !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: capitalize !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+
+.fc-button:hover {
+  background-color: #a0c4e9 !important;
+}
+
+/* Specific styling for individual toolbar sections if needed */
+.fc-left,
+.fc-center,
+.fc-right {
+  background-color: #f0f0f0 !important; /* Toolbar background */
+  padding: 10px !important;
+}
+
+/* Additional styling for previous, next, and today buttons */
+.fc-prev-button,
+.fc-next-button,
+.fc-today-button {
+  background-color: #ffe7ac !important;
+  border-color: #ffe7ac !important;
+}
+
+.fc-today-button:hover {
+  background-color: #f8d78c !important;
+}
+
+
+.fc-col-header {
+  background-color: rgba(209, 203, 237, 0.3);
+}
+.fc-col-header-cell {
+  padding: 10px 0;
+}
+
+.fc-daygrid-day:hover {
+  background-color: rgba(186, 215, 242, 0.2);
+}
+
+.fc-event {
+  width: 70% !important;
+  margin: 2px auto !important;
+  border-radius: 20px !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+  color: black !important;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 3px 0;
+}
+
+.fc-event-time {
+  font-weight: 600;
+}
+
+.fc-event:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+.event-popup input[type="text"],
+.event-popup input[type="datetime-local"],
+.event-popup textarea {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.dashboard-button img{
+  position: static !important;
+  width: 40px;
+  height: 40px;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  margin: 0 !important;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.dashboard-button::after {
+  content: "Return to Dashboard";  /* The tooltip text */
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+
+    /* Positioning */
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    transform: translateX(-50%);
+
+    /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.dashboard-button:hover img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+}
+
+.fc-timegrid-body{
+    overflow: hidden;
+    height : auto;
+}
+
+.fc-scrollgrid{
+    overflow: hidden;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+  .fc-header-toolbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .fc-event {
+    width: 85% !important;
+    font-size: 0.7em;
+  }
+}

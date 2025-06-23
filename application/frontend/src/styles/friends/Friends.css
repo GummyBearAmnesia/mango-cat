@@ -1,0 +1,294 @@
+.friends-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 246, 248, 0.9), rgba(249, 249, 255, 0.9), rgba(245, 255, 250, 0.9));
+    box-shadow: 0 6px 15px rgba(247, 180, 201, 0.2);
+    overflow-x: auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    position: relative;
+}
+
+.friends-container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ffd1e6, #f0e9ff, #dff5e6, #ffebf2);
+    border-radius: 23px;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(6px);
+}
+
+.friends-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 234, 255, 0.7) 0%, transparent 15%),
+        radial-gradient(circle at 80% 20%, rgba(234, 255, 246, 0.7) 0%, transparent 15%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Scrollable Row */
+.friends-list-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Custom Scrollbar */
+.friends-list-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.friends-list-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #ffc6d9, #d9c6ff);
+    border-radius: 10px;
+}
+
+.friends-list-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(247, 203, 217, 0.3);
+}
+
+.friends-list {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Friend Card */
+.friend-card {
+    min-width: 200px;
+    max-width: 200px;
+    padding: 20px 15px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(209, 186, 217, 0.25);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 2px solid #f8e1eb;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fairy dust trail effect on hover */
+.friend-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 244, 221, 0.85), transparent 25%),
+        radial-gradient(circle at 70% 60%, rgba(233, 238, 255, 0.85), transparent 25%);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Subtle fairy dust sparkles */
+.friend-card::after {
+    content: '✦';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    color: rgba(255, 215, 139, 0);
+    font-size: 18px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%);
+    transition: all 0.6s ease;
+    opacity: 0;
+    z-index: 5;
+}
+
+/* Tinkerbell inspired hover effects */
+.friend-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 
+        0 10px 20px rgba(214, 229, 255, 0.3),
+        0 0 15px rgba(255, 244, 214, 0.6);
+    border-color: rgba(255, 234, 246, 0.8);
+}
+
+/* Glowing effect on hover */
+.friend-card:hover::before {
+    opacity: 0.8;
+}
+
+/* Sparkling fairy dust animation on hover */
+.friend-card:hover::after {
+    content: '✦ ✧ ✦';
+    top: 10px;
+    opacity: 1;
+    color: rgba(255, 215, 139, 0.9);
+    text-shadow: 
+        0 0 8px rgba(255, 247, 210, 0.9),
+        0 0 12px rgba(255, 226, 170, 0.6);
+    animation: fairy-dust 2s infinite;
+}
+
+@keyframes fairy-dust {
+    0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Profile Picture */
+.friend-card .pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(248, 225, 235, 0.7);
+    margin: 0 auto 15px;
+    box-shadow: 
+        0 4px 8px rgba(249, 193, 206, 0.3),
+        0 0 15px rgba(255, 241, 251, 0.8);
+    transition: all 0.3s ease;
+}
+
+.friend-card:hover .pic {
+    border-color: rgba(255, 233, 242, 0.9);
+    box-shadow: 
+        0 4px 12px rgba(249, 193, 206, 0.4),
+        0 0 20px rgba(255, 241, 251, 0.9);
+    transform: scale(1.05);
+}
+
+/* Friend Name */
+.friend-card h4 {
+    margin: 8px 0 5px;
+    font-size: 18px;
+    color: #7a6174;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.friend-card h4::before,
+.friend-card h4::after {
+    content: '❀';
+    font-size: 10px;
+    color: #d4b5c7;
+    position: relative;
+    top: -5px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.friend-card:hover h4 {
+    color: #9a6e8e;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.friend-card:hover h4::before,
+.friend-card:hover h4::after {
+    content: '❀';
+    color: #e6a1c0;
+}
+
+/* Username */
+.username {
+    color: #aa8b9b;
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.friend-card:hover .username {
+    color: #c78dab;
+}
+
+/* Buttons */
+.reject-btn,
+.details-btn {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.friend-card .reject-btn {
+    background: linear-gradient(to right, #ffb6c1, #ff8a9d);
+    color: white;
+    box-shadow: 0 3px 8px rgba(255, 138, 157, 0.3);
+}
+
+.friend-card .reject-btn:hover {
+    background: linear-gradient(to right, #ff8a9d, #ff7a8e);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 10px rgba(255, 138, 157, 0.4),
+        0 0 15px rgba(255, 180, 197, 0.3);
+}
+
+.friend-card .details-btn {
+    background: linear-gradient(to right, #c1e9b6, #a3d896);
+    color: white;
+    box-shadow: 0 3px 8px rgba(162, 222, 155, 0.3);
+}
+
+.friend-card .details-btn:hover {
+    background: linear-gradient(to right, #a3d896, #8fc67a);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 10px rgba(162, 222, 155, 0.4),
+        0 0 15px rgba(188, 235, 183, 0.3);
+}
+
+/* Fairy dust effect on button hover */
+.friend-card .reject-btn::after,
+.friend-card .details-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.friend-card .reject-btn:hover::after,
+.friend-card .details-btn:hover::after {
+    opacity: 0.15;
+    animation: button-sparkle 1.5s infinite;
+}
+

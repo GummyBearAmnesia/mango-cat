@@ -1,0 +1,318 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(135deg, 
+        #ffffff 0%, 
+        #fff6f5 25%, 
+        #ffece8 50%, 
+        #ffe8d0 75%, 
+        #fff8e5 100%);
+    overflow: hidden;
+}
+
+.welcome-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 221, 215, 0.4) 0%, transparent 25%),
+        radial-gradient(circle at 70% 60%, rgba(255, 234, 213, 0.4) 0%, transparent 25%),
+        radial-gradient(circle at 10% 70%, rgba(255, 221, 215, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(255, 234, 213, 0.3) 0%, transparent 30%);
+    z-index: 0;
+}
+
+.welcome-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 192, 203, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 223, 186, 0.05) 0%, transparent 50%);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.welcome-header {
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #fb7766 0%, #fbc09b 100%); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    top: 0;
+    left: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    border: 3px solid #fb7766;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.welcome-footer {
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #fbc09b 0%, #fb7766 100%);
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    border: 3px solid #fb7766;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.welcome-content {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 40px;
+    padding: 30px 30px;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 
+        0 8px 25px rgba(255, 166, 158, 0.15),
+        0 0 40px rgba(255, 214, 209, 0.1),
+        inset 0 0 30px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.welcome-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(90deg, rgba(211, 225, 248, 0.2) 50%, rgba(255, 255, 255, 0.9) 50%);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.welcome-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(to right, #fb7766, #fbc09b, #fee09a, #ffb5b2, #ffcaaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 1;
+    position: relative;
+    text-shadow: 
+        0 2px 4px rgba(251, 119, 102, 0.3),
+        0 8px 16px rgba(251, 119, 102, 0.1);
+    letter-spacing: 1px;
+}
+
+.welcome-image {
+    width: 300px;
+    margin: 10px 0 25px;
+    z-index: 1;
+    position: relative;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.login-button, .create-account-button {
+    min-width: 180px;
+    height: 45px;
+    border-radius: 40px;
+    padding: 0 25px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0px -2px 4px rgba(0, 0, 0, 0.05),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button {
+    background-color: #aeabfc;
+    background-image: 
+        radial-gradient(circle at center, #c7c5fd 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, #d6d4fe 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, #c0bdfd 15%, transparent 50%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.create-account-button {
+    background-color: #ffb5b2;
+    background-image: 
+        radial-gradient(circle at center, #ffcaaa 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, #fee09a 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, #fbc09b 15%, transparent 50%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover, .create-account-button:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        inset 0px 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0px -2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:active, .create-account-button:active {
+    transform: scale(0.95);
+    box-shadow: 
+        inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+        inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.login-button::after, .create-account-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, 
+        transparent 0%, 
+        transparent 40%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 60%, 
+        transparent 100%);
+    border-radius: 40px;
+    transition: all 0.5s ease;
+}
+
+.login-button:hover::after, .create-account-button:hover::after {
+    transform: translateX(100%) translateY(-100%) rotate(30deg);
+}
+
+.decorative-stars {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(186, 198, 241, 0.5);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+
+.top-left-star {
+    top: 30px;
+    left: 30px;
+}
+
+.top-right-star {
+    top: 30px;
+    right: 30px;
+}
+
+.bottom-left-star {
+    bottom: 30px;
+    left: 30px;
+}
+
+.bottom-right-star {
+    bottom: 30px;
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .welcome-heading {
+        font-size: 42px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .login-button, .create-account-button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-heading {
+        font-size: 36px;
+    }
+    
+    .welcome-content {
+        padding: 30px 20px;
+    }
+    
+    .welcome-image {
+        width: 150px;
+    }
+}
+
+.mango-emoji {
+    position: absolute;
+    font-size: 30px;
+    z-index: 1;
+    filter: drop-shadow(0 3px 5px rgba(255, 165, 120, 0.3));
+}
+
+.top-left-mango {
+    top: 15px;
+    left: 15px;
+    transform: rotate(-15deg);
+}
+
+.top-right-mango {
+    top: 15px;
+    right: 15px;
+    transform: rotate(15deg);
+}
+
+.bottom-left-mango {
+    bottom: 15px;
+    left: 15px;
+    transform: rotate(-30deg);
+}
+
+.bottom-right-mango {
+    bottom: 15px;
+    right: 15px;
+    transform: rotate(30deg);
+}
+

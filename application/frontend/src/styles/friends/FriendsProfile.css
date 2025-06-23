@@ -1,0 +1,70 @@
+.modal-content-friends {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.profile-section-friends {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  border: 5px solid #f2bac9;
+  background-color: white;
+  min-width: 30%;
+  min-height: 40%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2001;
+}
+
+.profile-pic-friends {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+
+.profile-details-friends {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 200px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.analytics-section-friends {
+  margin-top: 10px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+}
+
+.close-btn-friends {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  padding: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1;
+}

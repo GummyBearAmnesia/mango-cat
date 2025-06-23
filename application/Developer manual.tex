@@ -1,0 +1,436 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+
+\usepackage{hyperref}
+
+\usepackage{listings}
+
+\usepackage{xcolor}
+
+\usepackage{graphicx}
+
+\usepackage{float}
+
+
+\title{\textbf{Developer Manual} \\ Virtual Study Spot}
+
+\author{Team Name}
+
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Introduction}
+
+Virtual Study Spot is a web application that allows users to create and join virtual study sessions with friends in real time. It is built using Django for the backend and React for the frontend, with WebSockets for real-time synchronization.
+
+
+
+\section{Tech Stack}
+
+
+
+\subsection{Frontend}
+
+\begin{itemize}
+
+    \item \textbf{React} – Modern JavaScript library for building user interfaces.
+
+    \item \textbf{WebSockets} – Enables real-time, bidirectional communication between the client and server.
+
+    \item \textbf{Jest} – JavaScript testing framework for unit and integration testing.
+
+\end{itemize}
+
+
+
+\subsection{Backend}
+
+\begin{itemize}
+
+    \item \textbf{Django} – High-level Python web framework for backend development.
+
+    \item \textbf{Django REST Framework (DRF)} – Toolkit for building Web APIs.
+
+    \item \textbf{WebSockets (Django Channels)} – Enables real-time features and asynchronous handling.
+
+\end{itemize}
+
+
+
+\subsection{Database}
+
+\begin{itemize}
+
+    \item \textbf{SQLite} – Lightweight, embedded database used with Django.
+
+    \item \textbf{Firebase} – Cloud storage solution for handling multimedia files.
+
+\end{itemize}
+
+
+
+\subsection{Authentication}
+
+\begin{itemize}
+
+    \item \textbf{Django Authentication with JWT (JSON Web Token)} – Secure user authentication and session management.
+
+\end{itemize}
+
+
+
+\subsection{Testing}
+
+\begin{itemize}
+
+    \item \textbf{Jest} – Used for frontend unit testing.
+
+    \item \textbf{Django Test Framework} – Used for backend testing.
+
+\end{itemize}
+
+
+
+\subsection{Deployment}
+
+\begin{itemize}
+
+    \item \textbf{Render} – Hosting platform for backend services.
+
+    \item \textbf{Vercel} – Deployment platform optimized for frontend applications.
+
+\end{itemize}
+
+
+
+\section{Project Structure}
+
+
+
+The project follows a modular structure, separating concerns between frontend and backend components for maintainability and scalability.
+
+
+
+\begin{itemize}
+
+    \item \textbf{frontend/} - Contains the React application.
+
+    \begin{itemize}
+
+        \item \textbf{src/} - Main source directory.
+
+        \begin{itemize}
+
+            \item \textbf{App.js} - Main App component.
+
+            \item \textbf{firebase-config.js} - Firebase configuration file.
+
+            \item \textbf{index.js} - Entry point of the React application.
+
+            \item \textbf{assets/} - Contains images, logos, and other assets.
+
+            \item \textbf{components/} - Contains reusable React components.
+
+            \item \textbf{pages/} - Contains different pages like \texttt{Analytics.js}, \texttt{Dashboard.js}, \texttt{Login.js}, etc.
+
+            \item \textbf{styles/} - Contains CSS files for styling components and pages.
+
+            \item \textbf{tests/} - Contains test files for components and pages.
+
+            \item \textbf{utils/} - Utility functions like \texttt{authService.js}.
+
+        \end{itemize}
+
+    \end{itemize}
+
+
+
+    \item \textbf{backend/} - Houses the Django project configuration.
+
+    \begin{itemize}
+
+        \item \textbf{asgi.py} - ASGI configuration for handling asynchronous requests
+
+    \item \textbf{settings.py} - Main configuration file for the Django project
+
+    \item \textbf{urls.py} - URL routing configuration for the Django project
+
+    \item \textbf{wsgi.py} - WSGI configuration for deploying the project on servers
+
+    \end{itemize}
+
+
+
+    \item \textbf{api/} - Implements backend application logic.
+
+    \begin{itemize}
+
+        \item \textbf{management/} - Includes custom management commands (e.g., seed and unseed)
+
+            \item \textbf{migrations/} - Database migration files
+
+            \item \textbf{models/} - Contains all model definitions (e.g., user, study session, tasks)
+
+            \item \textbf{tests/} - Unit and integration tests, including fixtures and views testing
+
+            \item \textbf{views/} - Contains views for different app functionalities (e.g., analytics, profile view)
+
+            \item \textbf{consumers.py/} - Manages WebSocket connections and real-time communication
+
+    \end{itemize}
+
+\end{itemize}
+
+
+
+
+
+\section{Setup Instructions}
+
+\subsection{Backend (Django)}
+
+\begin{verbatim}
+
+# Clone the repository
+
+git clone https://github.com/GummyBearAmnesia/virtual-study-room.git
+
+cd application
+
+
+
+# Create a virtual environment
+
+virtualenv venv
+
+source venv/bin/activate  # (On Windows use: venv\Scripts\activate)
+
+
+
+# Install dependencies
+
+pip3 install -r requirements.txt
+
+
+
+# Apply migrations
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+
+
+# Seed data for the project
+
+python manage.py seed
+
+
+
+# Run the server
+
+python manage.py runserver
+
+\end{verbatim}
+
+
+
+\subsection{Frontend (React)}
+
+\begin{verbatim}
+
+cd frontend
+
+
+
+# Create a .env file in the frontend directory with these variables:
+
+REACT_APP_FIREBASE_API_KEY=AIzaSyCPFx0pzYIwMqsMslp8omjC5hnBp3pTvOA
+
+REACT_APP_FIREBASE_AUTH_DOMAIN=virtual-study-room-db.firebaseapp.com
+
+REACT_APP_FIREBASE_DATABASE_URL=https://virtual-study-room-db-default-rtdb.firebaseio.com
+
+REACT_APP_FIREBASE_PROJECT_ID=virtual-study-room-db
+
+REACT_APP_FIREBASE_STORAGE_BUCKET=virtual-study-room-db.firebasestorage.app
+
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=1008040192146
+
+REACT_APP_FIREBASE_APP_ID=1:1008040192146:web:22905256f16b423a445e4b
+
+
+
+# Install dependencies
+
+npm install  # or yarn install
+
+
+
+# Start the development server
+
+npm start  # or yarn start
+
+\end{verbatim}
+
+
+
+\section{Database and Models}
+
+
+
+The project utilizes Django's Object-Relational Mapping (ORM) to manage database models efficiently. The following is a summary of the key models in the system.
+
+
+
+\begin{itemize}
+
+    \item \textbf{User}: Represents system users.
+
+    \item \textbf{Friends}: Tracks friendships and friend requests.
+
+    \item \textbf{Appointments}: Manages user calendar events.
+
+    \item \textbf{StudySession}: Represents study groups where users collaborate.
+
+    \item \textbf{SessionUser}: Tracks user participation in study sessions.
+
+    \item \textbf{List}: Manages user tasks and lists.
+
+    \item \textbf{Permission}: Controls access to to-do lists.
+
+    \item \textbf{Rewards}: Tracks rewards earned by users.
+
+    \item \textbf{MotivationalMessage}: Stores motivational quotes.
+
+    \item \textbf{Spotify Token}: Stores the token of the authenticated user.
+
+    \item \textbf{Chat}: Stores the token of the authenticated user.
+
+\end{itemize}
+
+
+
+\noindent This structured model ensures efficient data management and smooth
+
+integration within the Django backend.
+
+
+
+Below is an ER Diagram showing the finalised database structure:
+
+\begin{figure}[H]
+
+    \centering
+
+    \includegraphics[width=1\linewidth]{image.png}
+
+    \caption{Finalised ER Diagram}
+
+    \label{fig:er-diagram}
+
+\end{figure}
+
+
+
+\subsection{Firebase}
+
+
+
+We are also using Firebase Storage to store multimedia elements (images) that are uploaded by the user in the form of profile pictures or shared materials. We do not have models for Firebase - instead we are storing these images under folders:
+
+
+
+\begin{itemize}
+
+    \item \textbf{avatars/}: For users' profile pictures.
+
+    \item \textbf{shared\_materials/[roomCode]/}: For materials uploaded in the study rooms (replace roomCode with actual room identifier).
+
+\end{itemize}
+
+
+
+\section{WebSockets}
+
+WebSockets are used to sync study sessions in real time. Django Channels is used for handling WebSockets.
+
+
+
+\begin{enumerate}
+
+    \item When a user joins a study session, they connect to a WebSocket channel.
+
+    \item Any actions (e.g., message box, sharing the material, To-Do list) are broadcasted to all participants.
+
+    \item Messages are managed by Django Channels, which sends updates to the frontend.
+
+\end{enumerate}
+
+
+
+This ensures seamless real-time synchronization across all connected users.
+
+
+
+
+
+\section{Testing}
+
+\subsection{Backend Tests (Django)}
+
+Run unit tests for the API: (located in api/tests/)
+
+\begin{verbatim}
+
+coverage run --omit='*/tests/*,*/migrations/*,manage.py' manage.py test
+coverage html
+
+\end{verbatim}
+
+
+
+\subsection{Frontend Tests (Jest)}
+
+Run Jest tests for React components: (located in frontend/src/tests/)
+
+\begin{verbatim}
+
+cd frontend
+
+npm test
+npx jest --coverage
+
+\end{verbatim}
+
+
+
+\section{Deployment}
+
+
+
+\subsection{Backend Deployment}
+
+The backend is deployed on Render, ensuring reliable and scalable hosting.
+
+
+
+\subsection{Frontend Deployment}
+
+The frontend is deployed on Vercel, providing seamless integration for React applications.
+
+
+
+\subsection{Branch Management}
+
+The deployed project is located on the \texttt{deployment} branch.
+
+\end{document}

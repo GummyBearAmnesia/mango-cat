@@ -1,0 +1,66 @@
+[
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "description": "",
+      "firstname": "Alice",
+      "lastname": "Smith",
+      "email": "alice@example.com",
+      "username": "@alice123",
+      "password": "pbkdf2_sha256$260000$4BNvFuAWoTT1XVU8D6hCay$KqDCG+bHl8TwYcvA60SGhOMluAheVOnF1PMz0wClilc=",
+      "created_at": "2025-01-01T12:00:00Z",
+      "hours_studied": 3,
+      "streaks": 5,
+      "total_sessions": 3
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 2,
+    "fields": {
+      "description": "",
+      "firstname": "Bob",
+      "lastname": "Johnson",
+      "email": "bob@example.com",
+      "username": "@bob456",
+      "password": "pbkdf2_sha256$260000$4BNvFuAWoTT1XVU8D6hCay$KqDCG+bHl8TwYcvA60SGhOMluAheVOnF1PMz0wClilc=",
+      "created_at": "2025-01-01T12:00:00Z",
+      "hours_studied": 76,
+      "streaks": 100,
+      "total_sessions": 30
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 3,
+    "fields": {
+      "description": "",
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "john@example.com",
+      "username": "@john789",
+      "password": "pbkdf2_sha256$260000$4BNvFuAWoTT1XVU8D6hCay$KqDCG+bHl8TwYcvA60SGhOMluAheVOnF1PMz0wClilc=",
+      "created_at": "2025-01-01T12:00:00Z",
+      "hours_studied": 90,
+      "streaks": 320,
+      "total_sessions": 5
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 4,
+    "fields": {
+      "description": "",
+      "firstname": "Name",
+      "lastname": "Surname",
+      "email": "name@example.com",
+      "username": "@username",
+      "password": "pbkdf2_sha256$260000$4BNvFuAWoTT1XVU8D6hCay$KqDCG+bHl8TwYcvA60SGhOMluAheVOnF1PMz0wClilc=",
+      "created_at": "2025-01-01T12:00:00Z",
+      "hours_studied": 90,
+      "streaks": 320,
+      "total_sessions": 5
+    }
+  }
+]

@@ -1,0 +1,63 @@
+.MusicButton {
+    background-color: #f3f4f6; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding around the content */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width */
+    margin: auto; /* Centering the block */
+    text-align: center; /* Center-align the text */
+    display: flex; /* Using Flexbox */
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.MusicButton controls {
+    display: flex; /* Flexbox for controls */
+    width: 100%; /* Full width */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute space around items */
+}
+
+.MusicButton button {
+    color: black; /* White text */
+    border: none; /* No border */
+    padding: 8px 16px; /* Padding inside the button */
+    border-radius: 4px; /* Slightly rounded corners for the button */
+    cursor: pointer; /* Cursor indicates clickable */
+    outline: none; /* Remove focus outline */
+}
+
+.MusicButton input[type="range"] {
+    flex: 1; /* Take up the remaining space */
+    margin: 0 10px; /* Space on both sides */
+}
+
+.track-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width of the parent container */
+}
+
+.track-item {
+    background-color: #f0f0f0; /* Light grey background */
+    border: 1px solid #ddd; /* Slight border for definition */
+    border-radius: 4px; /* Rounded corners */
+    margin: 5px 0; /* Margin between items */
+    padding: 5px; /* Padding inside each item */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.track-item button {
+    width: 100%; /* Make the button fill its container */
+    background-color: transparent; /* Clear background */
+    border: none; /* No border */
+    color: #333; /* Dark text color for visibility */
+    text-align: left; /* Align text to the left */
+    padding: 8px; /* Padding for touch area */
+    cursor: pointer; /* Indicate that the item is clickable */
+}
+
+.track-item button:hover {
+    background-color: none; /* Light grey background on hover */
+}
+

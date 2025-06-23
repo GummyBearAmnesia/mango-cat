@@ -1,0 +1,162 @@
+/* Main container for the dashboard - takes up full viewport */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: auto;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #F6F0F0; /* Light pinkish background */
+    padding-top: 250px; /* Space for fixed header */
+}
+
+/* Fixed header at the top of the dashboard */
+.dashboard-heading {
+    position: absolute;
+    border: 3px solid #BAD7F2;
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    background-color: #BAD7F2; /* Light blue header background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; 
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000; 
+}
+
+/* Wrapper for the three-column layout */
+.dashboard-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Side panels (left and right) styling */
+.dashboard-left-panel, .dashboard-right-panel {
+    flex: 1; /* Takes 1/4 of the space each */
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px; 
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Center panel styling - wider than side panels */
+.dashboard-main-panel {
+    flex: 2; /* Takes 2/4 of the space (twice as wide as side panels) */
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 10px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Common styling for all dashboard panels/cards */
+.dashboard-panel {
+    background: #FFFFFF;
+    border-radius: 36px; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    flex-grow: 1;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* First panel in main section - for quick stats */
+.dashboard-main-panel .dashboard-panel:first-child {
+    height: 250px;
+    min-width: 700px;
+}
+
+/* Second panel in main section - for primary content */
+.dashboard-main-panel .dashboard-panel:last-child {
+    height: 65vh; 
+    min-height: 500px;
+}
+
+/* Bottom panel in right section */
+.dashboard-right-panel .dashboard-panel:last-child {
+    height: 100vh;
+    color: red; 
+}
+
+/* Top panel in left section */
+.dashboard-left-panel .dashboard-panel:first-child {
+    height: 30vh;
+}
+
+/* Bottom panel in left section */
+.dashboard-left-panel .dashboard-panel:last-child {
+    height: 20vh;
+}
+
+/* To-do list specific height - needs fixing (has a space in selector) */
+.dashboard to-do-list{
+    height: 100vh;
+}
+
+/* Updated title styling with ethereal butterfly-inspired aesthetics */
+.dashboard-container h2,
+.profile-section h2,
+.study-room-section h2,
+.statistics-section h2,
+.profile-title,
+.profile-username {
+    color: #f79cac !important; 
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(247, 156, 172, 0.4),
+        0 0 15px rgba(247, 156, 172, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.3) !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    font-size: 1.2em !important;
+    font-family: 'Inter', sans-serif !important;
+    position: relative !important;
+}
+
+/* Use the same sparkle symbols on both sides for consistency */
+.dashboard-container h2::before,
+.dashboard-container h2::after,
+.profile-section h2::before,
+.profile-section h2::after,
+.study-room-section h2::before,
+.study-room-section h2::after,
+.statistics-section h2::before,
+.statistics-section h2::after,
+.profile-title::before,
+.profile-title::after,
+.profile-username::before,
+.profile-username::after {
+    content: '✧';
+    display: inline-block;
+    margin: 0 7px;
+    color: #f8c1d0;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 10px rgba(248, 193, 208, 0.6);
+}

@@ -1,0 +1,140 @@
+.dashboard-panel {
+    padding: 15px;
+}
+
+.dashboard-panel input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(246, 156, 151, 0.3);
+    border-radius: 20px;
+    padding: 12px 15px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    color: #febbbd;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 5;
+    box-shadow: inset 0 2px 5px rgba(247, 156, 172, 0.2),
+                0 2px 5px rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.dashboard-panel input:focus {
+    border-color: rgba(246, 156, 151, 0.5);
+    box-shadow: inset 0 2px 5px rgba(247, 156, 172, 0.3),
+                0 0 8px rgba(244, 189, 208, 0.5);
+    color: #f79cac;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.generate-image{
+    height: 20vh;
+}
+
+.generate-panel{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.input-panel{
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.gsr {
+    width: 100%;
+    padding: 8px 15px;
+    background: linear-gradient(145deg, #ffdfeb, #f7d1d8);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 
+        inset 0 -3px 0 rgba(0, 0, 0, 0.05),
+        0 4px 10px rgba(249, 193, 206, 0.5),
+        0 2px 5px rgba(254, 219, 230, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.gsr::before {
+    content: '✿';
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.gsr::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1.5'/%3E%3Ccircle cx='13' cy='13' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+    border-radius: 40px;
+    z-index: 1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.gsr:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(145deg, #ffe5f0, #f9c7d0);
+    box-shadow: 
+        inset 0 -3px 0 rgba(0, 0, 0, 0.05),
+        0 7px 15px rgba(249, 193, 206, 0.6),
+        0 3px 8px rgba(254, 219, 230, 0.4);
+}
+
+.gsr:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+        inset 0 3px 5px rgba(0, 0, 0, 0.05),
+        0 2px 5px rgba(249, 193, 206, 0.3);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Add responsive styles for buttons on smaller screens */
+@media screen and (max-width: 768px) {
+    .gsr {
+        min-width: 160px;
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gsr {
+        min-width: 130px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,24 @@
+[
+    {
+        "model": "api.task",
+        "pk": 1,
+        "fields": {
+            "list": 1,
+            "title": "Buy Groceries",
+            "content": "Milk, Eggs, Butter, Bread",
+            "creation_date": "2025-02-24",
+            "is_completed": false
+        }
+    },
+    {
+        "model": "api.task",
+        "pk": 2,
+        "fields": {
+            "list": 2,
+            "title": "Finish Homework",
+            "content": "Complete math exercises, review history notes",
+            "creation_date": "2025-02-24",
+            "is_completed": false
+        }
+    }
+]

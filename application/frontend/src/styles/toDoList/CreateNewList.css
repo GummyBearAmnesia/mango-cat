@@ -1,0 +1,80 @@
+/* Modal overlay */
+.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 1000 !important;
+}
+
+/* Modal content box */
+.modal-content {
+    width: 350px !important;
+    background-color: white !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Title styling */
+.modal-content h4 {
+    margin-top: 5px !important;
+    margin-bottom: 25px !important;
+    color: #f2bac9 !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+/* Form layout */
+.modal-content form {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+/* Input styling */
+.modal-content input[type="text"] {
+    height: 45px !important;
+    border: 2px solid #bad7f5 !important;
+    border-radius: 8px !important;
+    padding: 8px 15px !important;
+    font-size: 16px !important;
+    margin-bottom: 30px !important;
+}
+
+/* Button container */
+.modal-content form > div {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin-top: auto !important;
+}
+
+/* Button styling */
+.modal-content .btn {
+    min-width: 100px !important;
+    height: 38px !important;
+    border-radius: 6px !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+/* Save button */
+.modal-content .btn-primary {
+    background-color: #bad7f5 !important;
+    color: white !important;
+}
+
+/* Cancel button */
+.modal-content .btn-secondary {
+    background-color: #f0f0f0 !important;
+    color: #888 !important;
+}

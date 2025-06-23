@@ -1,0 +1,143 @@
+
+/* Main chat box wrapper */
+.chatBox-container {
+    width: 100%;
+    max-width: 325px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Messages display area with scrolling */
+.chat-messages {
+    position: relative;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: white;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: #d1d9fa;
+    border-style: solid;
+    box-shadow: 0 2px 10px rgba(209, 217, 250, 0.3);
+}
+
+/* Container for input field and send button */
+.input-container {
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+/* Text input field */
+.chatBox-container input {
+    width: calc(100% - 80px);
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+/* Send button styling */
+.chatBox-container button {
+    width: 80px;
+    padding: 8px 0;
+    background-color: #8e99e3;
+    background-image: 
+        radial-gradient(circle at center, #a3ade9 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, #bac6f1 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, #9aa4e5 15%, transparent 50%);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px #b2b2b2;
+    box-shadow: 
+        inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0px -2px 4px rgba(142, 153, 227, 0.2),
+        0 2px 8px rgba(186, 198, 241, 0.4);
+    position: relative;
+}
+
+/* Small highlight dot on button */
+.chatBox-container button::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Button hover effect */
+.chatBox-container button:hover {
+    transform: scale(1.05);
+    background-image: 
+        radial-gradient(circle at center, #b2bbee 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, #c4cdf3 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, #a9b2ec 15%, transparent 50%);
+    box-shadow: 
+        inset 0px 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0px -2px 4px rgba(142, 153, 227, 0.3),
+        0 4px 12px rgba(186, 198, 241, 0.6);
+}
+
+/* Button pressed state */
+.chatBox-container button:active {
+    transform: scale(0.95);
+    box-shadow: 
+        inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+        inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual chat message */
+.chat-message {
+    padding: 5px;
+    border-bottom: 1px dotted #eee;
+}
+
+/* Remove border from last message */
+.chat-message:last-child {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+/* Right-aligned messages (user's own messages) */
+.current-user {
+    text-align: right;
+}
+
+/* Left-aligned messages (other user's messages) */
+.other-user {
+    text-align: left;
+}
+
+/* "User is typing" indicator */
+.typing-indicator {
+    font-size: 14px;
+    font-style: italic;
+    color: #888;
+    padding: 5px 10px;
+    margin-top: 5px;
+    align-self: flex-start;
+    width: 100%;
+}

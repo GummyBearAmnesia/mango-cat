@@ -1,0 +1,32 @@
+[
+    {
+        "model": "api.list",
+        "pk": 1,
+        "fields": {
+            "name": "Default List1",
+            "is_shared": false
+        }
+    },
+    {
+        "model": "api.list",
+        "pk": 2,
+        "fields": {
+            "name": "Shared List1",
+            "is_shared": false
+        }
+    },{
+        "model": "api.list",
+        "pk": 3,
+        "fields": {
+            "name": "Default List2",
+            "is_shared": false
+        }
+    },{
+        "model": "api.list",
+        "pk": 4,
+        "fields": {
+            "name": "Default List2",
+            "is_shared": false
+        }
+    }
+]

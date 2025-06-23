@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif !important;    
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+ }
+
+ .heading1 {
+  border: 3px solid #F2BAC9 !important; 
+  padding: 10px !important;
+  text-align: center !important;
+  font-family: 'Impact', sans-serif !important;
+  font-size: 50px !important;
+  font-weight: 100 !important;
+  background-color: #F2BAC9 !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+  box-sizing: border-box; /* ensures padding doesn't push it down */
+  z-index: 1000;
+}

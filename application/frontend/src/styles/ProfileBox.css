@@ -1,0 +1,975 @@
+.profile-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.profile-container button {
+  background: #f2bac9;
+  width: 6vw;
+  padding: 5px;
+}
+
+.profile-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  align-items: center;
+  width: auto;
+  justify-content: center;
+}
+
+.profile-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.profile-pic {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 20px;
+  border: 5px solid #f2bac9;
+  margin: 0 10px;
+}
+
+.profile-title {
+  color: #bac6f1 !important;
+  text-shadow: 
+      0 0 2px rgba(186, 198, 241, 0.3),
+      0 0 4px rgba(186, 198, 241, 0.2),
+      0 0 6px rgba(186, 198, 241, 0.1),
+      0 0 8px rgba(255, 255, 255, 0.5),
+      1px 1px 0px rgba(209, 203, 237, 0.5) !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: 1.2em !important;
+  margin: 10px 0px;
+}
+
+/* Modify username styling to remove capitalization and stars */
+.username,
+.user-name,
+.profile-username,
+.profile-user-name,
+.profile-name,
+.profile-user,
+.profile-container .username,
+h2.username,
+.profile-box .username,
+.user-profile-name {
+  text-transform: none !important; /* Remove capitalization */
+  font-size: 1.5rem !important;
+  color: #8c5a2b !important; /* Warm brown color */
+  font-weight: 600 !important;
+  font-family: "Inter", sans-serif !important;
+  margin: 10px 0 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Remove star decorations from all username variations */
+[class*="username"]::before,
+[class*="username"]::after,
+[class*="user-name"]::before,
+[class*="user-name"]::after,
+[class*="profile-name"]::before,
+[class*="profile-name"]::after,
+h2.username::before,
+h2.username::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Remove star elements if they're actual elements and not pseudo-elements */
+.username-star,
+.username-decoration,
+.name-decoration,
+span.star,
+.username-container .star {
+  display: none !important;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure buttons have the same alignment */
+.upload-button,
+.default-select-button {
+  margin: 0 !important; /* Remove any existing margins to prevent misalignment */
+  flex-shrink: 0 !important; /* Prevent buttons from shrinking */
+}
+
+/* PomPomPurin-inspired upload button (keeping pink color) */
+.upload-button,
+.profile-popup-container .upload-button,
+.modal-content-profile .upload-button {
+  width: 180px !important;
+  max-width: 180px !important;
+  height: 45px !important;
+  border-radius: 25px !important; /* Rounder corners */
+  border: none !important;
+  background-color: #fbbccf !important; /* Keep pink color */
+  background-image: 
+      radial-gradient(circle at center, #fcd5e0 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #fde6ed 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #f9adc2 15%, transparent 50%) !important;
+  color: white !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.5px !important;
+  padding: 0 20px !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+      inset 0px -2px 4px rgba(251, 188, 207, 0.2),
+      0 2px 8px rgba(251, 188, 207, 0.4) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Brown "beret" top for upload button */
+.upload-button::before,
+.profile-popup-container .upload-button::before,
+.modal-content-profile .upload-button::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 10px !important;
+  background-color: rgba(140, 90, 43, 0.7) !important; /* Semi-transparent brown */
+  border-radius: 25px 25px 0 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+}
+
+/* PomPomPurin-inspired default button (keeping green color) */
+.default-select-button,
+.profile-popup-container .default-select-button,
+.modal-content-profile .default-select-button {
+  width: 180px !important;
+  max-width: 180px !important;
+  height: 45px !important;
+  border-radius: 25px !important; /* Rounder corners */
+  border: none !important;
+  background-color: #c2e19d !important; /* Keep green color */
+  background-image: 
+      radial-gradient(circle at center, #d5eaba 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #e1f0cc 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #b6d991 15%, transparent 50%) !important;
+  color: white !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.5px !important;
+  padding: 0 20px !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+      inset 0px -2px 4px rgba(194, 225, 157, 0.2),
+      0 2px 8px rgba(194, 225, 157, 0.4) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Brown "beret" top for default button */
+.default-select-button::before,
+.profile-popup-container .default-select-button::before,
+.modal-content-profile .default-select-button::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 10px !important;
+  background-color: rgba(140, 90, 43, 0.7) !important; /* Semi-transparent brown */
+  border-radius: 25px 25px 0 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+}
+
+/* Making cheek decorations more subtle for better text readability */
+.upload-button::after,
+.profile-popup-container .upload-button::after,
+.modal-content-profile .upload-button::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: 
+      radial-gradient(circle at 20% 75%, rgba(255, 187, 209, 0.4) 0%, rgba(255, 187, 209, 0.4) 3%, transparent 10%), /* Smaller, more transparent */
+      radial-gradient(circle at 80% 75%, rgba(255, 187, 209, 0.4) 0%, rgba(255, 187, 209, 0.4) 3%, transparent 10%),
+      linear-gradient(135deg, 
+          transparent 0%, 
+          transparent 40%, 
+          rgba(255, 255, 255, 0.3) 50%, 
+          transparent 60%, 
+          transparent 100%) !important;
+  border-radius: 25px !important;
+  transition: all 0.5s ease !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.default-select-button::after,
+.profile-popup-container .default-select-button::after,
+.modal-content-profile .default-select-button::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: 
+      radial-gradient(circle at 20% 75%, rgba(255, 187, 209, 0.4) 0%, rgba(255, 187, 209, 0.4) 3%, transparent 10%), /* Smaller, more transparent */
+      radial-gradient(circle at 80% 75%, rgba(255, 187, 209, 0.4) 0%, rgba(255, 187, 209, 0.4) 3%, transparent 10%),
+      linear-gradient(135deg, 
+          transparent 0%, 
+          transparent 40%, 
+          rgba(255, 255, 255, 0.3) 50%, 
+          transparent 60%, 
+          transparent 100%) !important;
+  border-radius: 25px !important;
+  transition: all 0.5s ease !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+/* Hover animations */
+.upload-button:hover::after,
+.default-select-button:hover::after {
+  transform: translateX(100%) translateY(-100%) rotate(30deg) !important;
+}
+
+.upload-button:hover,
+.default-select-button:hover {
+  transform: scale(1.05) !important;
+}
+
+.upload-button:active,
+.default-select-button:active {
+  transform: scale(0.95) !important;
+  box-shadow: 
+      inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+      inset -1px -1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.avatar-selector {
+  width: 100%; /* Take full width of the container */
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.upload-button,
+.default-select-button,
+.save-desc-button,
+.profile-description {
+  margin: 10px 0;
+  min-width: 140px;
+}
+
+/* PomPomPurin-inspired description box styling */
+.profile-description {
+  background-color: #ffefc3 !important; /* Purin cream-yellow */
+  padding: 18px !important;
+  border-radius: 30px !important;
+  border: none !important;
+  text-align: center !important;
+  resize: none !important;
+  width: 90% !important;
+  min-height: 120px !important;
+  color: #8c5a2b !important; /* Brown like Purin's beret */
+  font-weight: 600 !important;
+  font-family: "Inter", sans-serif !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 
+      inset 0 -15px 30px rgba(255, 255, 220, 0.8),
+      0 10px 20px rgba(255, 202, 170, 0.2) !important;
+}
+
+/* Brown "beret" at the top of the textbox */
+.profile-description::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 25px !important;
+  background-color: #8c5a2b !important; /* Brown beret */
+  border-radius: 25px 25px 0 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+  box-shadow: 0 3px 5px rgba(140, 90, 43, 0.2) !important;
+}
+
+/* Also making description box cheeks more subtle */
+.profile-description::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: 
+      radial-gradient(circle at 20% 75%, rgba(255, 187, 209, 0.4) 0%, rgba(255, 187, 209, 0.4) 5%, transparent 12%),
+      radial-gradient(circle at 80% 75%, rgba(255, 187, 209, 0.4) 0%, rgba(255, 187, 209, 0.4) 5%, transparent 12%),
+      linear-gradient(to bottom, 
+        transparent 0%, 
+        transparent 80%,
+        rgba(255, 207, 155, 0.2) 90%,
+        rgba(255, 207, 155, 0.3) 100%) !important;
+  top: 0 !important;
+  left: 0 !important;
+  border-radius: 30px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+/* Cute Band-aid decorations */
+.profile-description-container {
+  position: relative !important;
+  width: 90% !important;
+  margin: 0 auto !important;
+}
+
+.profile-description-container::before,
+.profile-description-container::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 40px !important;
+  height: 15px !important;
+  background: #ffdbe7 !important; /* Pink band-aid */
+  border: 1px solid rgba(255, 186, 213, 0.7) !important;
+  z-index: 3 !important;
+  transform: rotate(-30deg) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 2px 4px rgba(255, 186, 213, 0.3) !important;
+  pointer-events: none !important;
+}
+
+.profile-description-container::before {
+  top: 15px !important;
+  right: 20px !important;
+}
+
+.profile-description-container::after {
+  width: 35px !important;
+  top: 35px !important;
+  right: 35px !important;
+  transform: rotate(-15deg) !important;
+}
+
+/* Kawaii face label with starry eyes */
+.profile-description-label {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700 !important;
+  color: #8c5a2b !important; /* Match Purin's brown */
+  font-size: 16px !important;
+  margin-bottom: 15px !important;
+  display: inline-block !important;
+  text-align: center !important;
+  letter-spacing: 0.5px !important;
+  position: relative !important;
+  width: fit-content !important;
+  margin: 10px auto 20px auto !important;
+  background-color: #ffefc3 !important;
+  padding: 5px 15px !important;
+  border-radius: 20px !important;
+  z-index: 5 !important;
+  box-shadow: 0 3px 10px rgba(255, 202, 170, 0.3) !important;
+}
+
+/* Rainbow pastel glow effect on focus */
+.profile-description:focus {
+  outline: none !important;
+  box-shadow: 
+      0 0 10px rgba(255, 187, 209, 0.4), 
+      0 0 20px rgba(255, 206, 132, 0.3),
+      0 0 30px rgba(183, 225, 205, 0.2),
+      0 0 40px rgba(186, 198, 241, 0.2) !important;
+  border-color: rgba(255, 187, 209, 0.6) !important;
+}
+
+/* Purin-yellow save button */
+.save-desc-button {
+  width: 180px !important;
+  max-width: 180px !important;
+  height: 45px !important;
+  border-radius: 40px !important;
+  border: none !important;
+  background-color: #ffefc3 !important; /* Purin yellow */
+  background-image: 
+      radial-gradient(circle at center, #fff7d8 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #fffae5 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #ffe9a6 15%, transparent 50%) !important;
+  color: #8c5a2b !important; /* Brown text */
+  cursor: pointer !important;
+  text-align: center !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.5px !important;
+  padding: 0 20px !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+      inset 0px -2px 4px rgba(255, 239, 195, 0.2),
+      0 2px 8px rgba(140, 90, 43, 0.2) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 15px !important;
+}
+
+/* Small brown beret on top of save button */
+.save-desc-button::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 30px !important;
+  height: 8px !important;
+  background-color: #8c5a2b !important; /* Brown beret */
+  border-radius: 5px !important;
+  top: -5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1 !important;
+  box-shadow: 0 2px 3px rgba(140, 90, 43, 0.2) !important;
+}
+
+/* Shine effect */
+.save-desc-button::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: linear-gradient(135deg, 
+      transparent 0%, 
+      transparent 40%, 
+      rgba(255, 255, 255, 0.3) 50%, 
+      transparent 60%, 
+      transparent 100%) !important;
+  border-radius: 40px !important;
+  transition: all 0.5s ease !important;
+  z-index: 10 !important;
+}
+
+.save-desc-button:hover::after {
+  transform: translateX(100%) translateY(-100%) rotate(30deg) !important;
+}
+
+.save-desc-button:hover {
+  transform: scale(1.05) !important;
+}
+
+.save-desc-button:active {
+  transform: scale(0.95) !important;
+  box-shadow: 
+      inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+      inset -1px -1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.logoff-button {
+  border-radius: 40px !important;
+  border: none !important;
+  padding: 8px 20px !important;
+  text-align: center !important;
+  color: white !important;
+  cursor: pointer !important;
+  font-weight: 700 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  background-color: #f4bdd0 !important;
+  background-image: 
+      radial-gradient(circle at center, #f8cad9 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #fde1e9 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #f0b4c7 15%, transparent 50%) !important;
+  text-shadow: 1px 1px 2px #b2b2b2 !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+      inset 0px -2px 4px rgba(244, 189, 208, 0.2),
+      0 2px 8px rgba(244, 189, 208, 0.4) !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+  min-width: 120px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.logoff-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 25% !important;
+  left: 15% !important;
+  width: 5px !important;
+  height: 5px !important;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+.logoff-button:hover {
+  transform: scale(1.05) !important;
+  background-image: 
+      radial-gradient(circle at center, #fbd3df 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #ffe9ef 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #f3bdcd 15%, transparent 50%) !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.9),
+      inset 0px -2px 4px rgba(244, 189, 208, 0.3),
+      0 4px 12px rgba(244, 189, 208, 0.6) !important;
+}
+
+.logoff-button:active {
+  transform: scale(0.95) !important;
+  box-shadow: 
+      inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+      inset -1px -1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.profile-edit-button {
+  border-radius: 40px !important;
+  border: none !important;
+  padding: 8px 20px !important;
+  text-align: center !important;
+  color: white !important;
+  cursor: pointer !important;
+  font-weight: 700 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  background-color: #f4bdd0 !important;
+  background-image: 
+      radial-gradient(circle at center, #f8cad9 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #fde1e9 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #f0b4c7 15%, transparent 50%) !important;
+  text-shadow: 1px 1px 2px #b2b2b2 !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.7),
+      inset 0px -2px 4px rgba(244, 189, 208, 0.2),
+      0 2px 8px rgba(244, 189, 208, 0.4) !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+  min-width: 120px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.profile-edit-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 25% !important;
+  left: 15% !important;
+  width: 5px !important;
+  height: 5px !important;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+.profile-edit-button:hover {
+  transform: scale(1.05) !important;
+  background-image: 
+      radial-gradient(circle at center, #fbd3df 20%, transparent 70%),
+      radial-gradient(circle at 30% 30%, #ffe9ef 15%, transparent 50%),
+      radial-gradient(circle at 70% 70%, #f3bdcd 15%, transparent 50%) !important;
+  box-shadow: 
+      inset 0px 2px 4px rgba(255, 255, 255, 0.9),
+      inset 0px -2px 4px rgba(244, 189, 208, 0.3),
+      0 4px 12px rgba(244, 189, 208, 0.6) !important;
+}
+
+.profile-edit-button:active {
+  transform: scale(0.95) !important;
+  box-shadow: 
+      inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+      inset -1px -1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.modal-profile,
+.inventory-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 2000; /*ensures it is on top of dashboard heading*/
+}
+
+.modal-content-profile {
+  margin: auto;
+  padding: 20px;
+  border: 5px solid #f2bac9;
+  background-color: white;
+  width: 50%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2001; /*ensures it is on top of dashboard heading*/
+}
+
+.inventory-display-content {
+  margin: auto;
+  padding: 20px;
+  border: 5px solid #f2bac9;
+  background-color: white;
+  width: auto;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2001; /*ensures it is on top of dashboard heading*/
+}
+
+.show-modal-button {
+  border: none;
+  background-color: #f2bac9;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  transition: background-color 0.3s ease;
+  margin: 10px 0px;
+}
+
+.close-button {
+  align-self: flex-end;
+  background-color: #bad7f5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-box-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inventory-align {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.inventory-content {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picture-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 20px;
+}
+
+.main-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description-text-label {
+  color: black;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  justify-content: left;
+}
+
+.description-display-container {
+  padding: 10px 20px !important;
+  border-radius: 20px !important;
+  border: 5px solid #ffc0d9 !important; /* Pink border instead of blue */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  max-width: 200px !important; 
+  background: white !important;
+  background-image: linear-gradient(to bottom, rgba(255, 240, 255, 0.8) 0%, rgba(255, 250, 255, 0.9) 100%) !important;
+  box-shadow: 
+    inset 0 0 10px rgba(255, 192, 217, 0.3),
+    0 0 15px rgba(255, 192, 217, 0.4),
+    0 5px 15px rgba(232, 213, 255, 0.3) !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.description-display {
+  color: #8c5a2b !important; /* Brown text */
+  font-weight: 600 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 17px !important;
+  text-align: center !important;
+  height: 20vh !important;
+  width: 10vw !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  /*what*/
+  -webkit-line-clamp: 3 !important;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  z-index: 2 !important;
+}
+
+/* Rainbow top decoration */
+.description-display-container::after {
+  content: "" !important;
+  position: absolute !important;
+  height: 8px !important;
+  top: 0 !important;
+  left: 10% !important;
+  right: 10% !important;
+  background: linear-gradient(to right, 
+    #ffc0d9, /* Pink */
+    #e8d5ff, /* Lavender */
+    #b8e6ff, /* Blue */
+    #d5ffea, /* Mint */
+    #ffefc3) !important; /* Yellow */
+  border-radius: 0 0 12px 12px !important;
+  z-index: 3 !important;
+  opacity: 0.8 !important;
+}
+
+/* Pink dot pattern background */
+.description-display-container::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 192, 217, 0.2) 0%, rgba(255, 192, 217, 0.2) 2%, transparent 5%),
+    radial-gradient(circle at 80% 20%, rgba(232, 213, 255, 0.2) 0%, rgba(232, 213, 255, 0.2) 2%, transparent 5%),
+    radial-gradient(circle at 20% 80%, rgba(184, 230, 255, 0.2) 0%, rgba(184, 230, 255, 0.2) 2%, transparent 5%),
+    radial-gradient(circle at 80% 80%, rgba(255, 239, 195, 0.2) 0%, rgba(255, 239, 195, 0.2) 2%, transparent 5%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  border-radius: 15px !important;
+}
+
+/* Custom scrollbar styling */
+.description-display::-webkit-scrollbar {
+  width: 8px !important;
+  background-color: rgba(255, 192, 217, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.description-display::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 192, 217, 0.6) !important;
+  border-radius: 4px !important;
+}
+
+/* Styling for rewards/badges button */
+.inventory-button {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    background-color: #bad7f5 !important; /* Default blue color */
+    background-image: 
+        radial-gradient(circle at center, rgba(201, 224, 247, 0.9) 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, rgba(222, 235, 249, 0.8) 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(186, 215, 242, 0.8) 15%, transparent 50%) !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    box-shadow: 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(186, 215, 242, 0.6),
+        0 0 15px rgba(186, 215, 242, 0.4) !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 10px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Rewards button when active (showing inventory) */
+.inventory-button[aria-label="Hide Badge Collection"] {
+    background-color: #baf2e9 !important; /* Teal color when active */
+    background-image: 
+        radial-gradient(circle at center, rgba(201, 247, 241, 0.9) 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, rgba(222, 249, 244, 0.8) 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(186, 242, 233, 0.8) 15%, transparent 50%) !important;
+    box-shadow: 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(186, 242, 233, 0.6),
+        0 0 15px rgba(186, 242, 233, 0.4) !important;
+}
+
+/* Calendar button styling */
+.CalendarButton {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    background-color: #bad7f5 !important;
+    background-image: 
+        radial-gradient(circle at center, rgba(201, 224, 247, 0.9) 20%, transparent 70%),
+        radial-gradient(circle at 30% 30%, rgba(222, 235, 249, 0.8) 15%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(186, 215, 242, 0.8) 15%, transparent 50%) !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    box-shadow: 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(186, 215, 242, 0.6),
+        0 0 15px rgba(186, 215, 242, 0.4) !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 10px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Hover effects for both buttons */
+.inventory-button:hover,
+.CalendarButton:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 20px rgba(186, 215, 242, 0.6) !important;
+}
+
+/* Active state for both buttons */
+.inventory-button:active,
+.CalendarButton:active {
+    transform: scale(0.95) !important;
+    box-shadow: 
+        inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+        inset -1px -1px 3px rgba(0, 0, 0, 0.2),
+        0 2px 6px rgba(186, 215, 242, 0.5) !important;
+}
+
+/* Shine effect overlay for both buttons */
+.inventory-button::after,
+.CalendarButton::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    background: linear-gradient(135deg, 
+        transparent 0%, 
+        transparent 40%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 60%, 
+        transparent 100%) !important;
+    border-radius: 50% !important;
+    transition: all 0.5s ease !important;
+    z-index: 1 !important;
+}
+
+/* Animates shine on hover */
+.inventory-button:hover::after,
+.CalendarButton:hover::after {
+    transform: translateX(100%) translateY(-100%) rotate(30deg) !important;
+}
+
+/* Add media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .profile-button-container {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .logoff-button,
+  .profile-edit-button {
+    min-width: 110px !important;
+    padding: 8px 15px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logoff-button,
+  .profile-edit-button {
+    min-width: 100px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+}

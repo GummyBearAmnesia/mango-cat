@@ -1,0 +1,235 @@
+/* Container for pending friend requests */
+.pending-friends {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 246, 248, 0.9), rgba(249, 249, 255, 0.9));
+    box-shadow: 0 5px 15px rgba(249, 193, 206, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    position: relative;
+}
+
+.pending-friends::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 235, 243, 0.9), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(235, 243, 255, 0.9), transparent 25%);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.7;
+    filter: blur(5px);
+}
+
+/* Scrollable list wrapper */
+.invitations-container {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+/* Custom scrollbar styling */
+.invitations-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.invitations-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ffc6d9, #d4c6ff);
+    border-radius: 6px;
+}
+
+.invitations-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    border: 1px solid rgba(242, 217, 226, 0.3);
+}
+
+/* Invitations list */
+.invitations-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    max-width: 95%;
+    align-items: center;
+}
+
+/* Each request - keeps all elements in one row */
+.invitation-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 2px solid #f8e1eb;
+    font-size: 16px;
+    width: 100%;
+    box-shadow: 0 3px 8px rgba(249, 193, 206, 0.15);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.invitation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 244, 221, 0.85), transparent 20%),
+        radial-gradient(circle at 80% 50%, rgba(233, 238, 255, 0.85), transparent 20%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.invitation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 6px 12px rgba(249, 193, 206, 0.25),
+        0 0 15px rgba(238, 224, 255, 0.3);
+    border-color: #f1c1d0;
+}
+
+.invitation-card:hover::before {
+    opacity: 0.8;
+}
+
+/* Subtle butterfly decoration on hover */
+.invitation-card:hover::after {
+    content: '✿';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 12px;
+    color: #e8b9d3;
+    opacity: 0.8;
+    animation: float-animation 2s infinite ease-in-out;
+}
+
+@keyframes float-animation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Name and username inside request */
+.invitation-name {
+    flex-grow: 1;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+    color: #7a6174;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.invitation-card:hover .invitation-name {
+    color: #9a6e8e;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons for Accept/Reject */
+.invitation-actions {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Button styling */
+.accept-btn,
+.reject-btn {
+    background: none;
+    border: none;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.accept-btn {
+    color: #7dc978;
+}
+
+.accept-btn:hover {
+    background-color: rgba(141, 228, 133, 0.2);
+    color: #5db854;
+    text-shadow: 0 0 5px rgba(141, 228, 133, 0.3);
+}
+
+.reject-btn {
+    color: #ff8a9d;
+}
+
+.reject-btn:hover {
+    background-color: rgba(255, 138, 157, 0.2);
+    color: #ff6c82;
+    text-shadow: 0 0 5px rgba(255, 138, 157, 0.3);
+}
+
+/* Fairy dust effect on button hover */
+.accept-btn::after,
+.reject-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.accept-btn:hover::after,
+.reject-btn:hover::after {
+    opacity: 0.3;
+    animation: button-sparkle 1.5s infinite;
+}
+
+.small-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #f8e1eb;
+    box-shadow: 0 2px 5px rgba(249, 193, 206, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.invitation-card:hover .small-pic {
+    border-color: #f1d1e0;
+    box-shadow: 
+        0 3px 8px rgba(249, 193, 206, 0.3),
+        0 0 12px rgba(255, 231, 243, 0.6);
+    transform: scale(1.05);
+}
+
+@keyframes button-sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+}
