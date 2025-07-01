@@ -70,6 +70,29 @@ const CalendarPage = () => {
         fetchEvents();
     }, []);
 
+    // Add this function inside your CalendarPage component:
+
+    const handleDeleteEvent = async () => {
+    if (!selectedEvent) return;
+
+    try {
+        // Assuming your backend API expects the event id to delete at /events/:id/
+        const response = await getAuthenticatedRequest(`/events/${selectedEvent.id}/`, 'DELETE');
+
+        if (response === undefined) {
+        // DELETE requests often return empty body, treat undefined as success
+        toast.success("Event deleted successfully");
+        closePopup();
+        fetchEvents(); // Refresh calendar events
+        } else {
+        // Handle unexpected response content
+        toast.error("Unexpected response from server.");
+        }
+    } catch (error) {
+        console.error("Error deleting event:", error);
+        toast.error("Failed to delete event.");
+    }
+    };
 
     // Function to add a new event to the calendar
     const handleSubmit = async (e) => {
@@ -294,6 +317,9 @@ const CalendarPage = () => {
                         {selectedEvent.extendedProps.description ||
                         "No description available"}
                     </p>
+                    <button onClick={handleDeleteEvent} style={{marginLeft: '10px', backgroundColor: '#f44336', color: 'white'}}>
+                        Delete Event
+                    </button>
 
                     {/* Button to close popup */}
                     <button onClick={closePopup}>Close</button>
