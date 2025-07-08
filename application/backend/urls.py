@@ -79,5 +79,12 @@ urlpatterns = [
 
     # Calendar events endpoints
     path('api/events/', event_list, name='event-list'),
-    path('api/events/<int:pk>/', event_detail, name='event-detail')
+    path('api/events/<int:pk>/', event_detail, name='event-detail'),
+
+    #test generation
+    path('api/generate_tests/', views.generateTestsView.as_view(), name='generate_tests'),
+
+    #parse file
+    path('api/upload_pdf/', views.PDFUploadView.as_view(), name='upload_pdf'),
+
 ]

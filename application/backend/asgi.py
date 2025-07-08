@@ -2,6 +2,8 @@ import os
 from django.core.asgi import get_asgi_application
 from channels.routing import ProtocolTypeRouter, URLRouter
 from api.routing import websocket_urlpatterns
+import dotenv
+dotenv.load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 # Set default Django settings module
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')

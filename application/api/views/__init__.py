@@ -9,3 +9,5 @@ from api.views.shared_materials_view import *
 from api.views.friends import FriendsView
 from api.views.groupStudyRoom import *
 from api.views.getParticipants import *
+from api.views.generate_test import *
+from api.views.file_parser import *
