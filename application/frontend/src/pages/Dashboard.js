@@ -10,6 +10,7 @@ import Analytics from './Analytics';
 import FriendsTab  from '../components/friends/FriendsTab';
 import ProfileBox from './ProfileBox';
 
+import ChatAI from '../components/testsGeneration/TestGenerForm';
 /*
 This handles the layout of the dashboard page and loads in all the components as panels
 */
@@ -40,6 +41,10 @@ function Dashboard() {
                 <div className = "dashboard-main-panel" data-testid="main-panel">
                     <StudyRoomComponent />
                     <FriendsTab />
+                </div>
+
+                <div>
+                    <ChatAI/>
                 </div>
 
                 {/* Right Panel - To Do List */}
