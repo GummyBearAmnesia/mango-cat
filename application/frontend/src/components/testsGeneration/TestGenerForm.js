@@ -60,7 +60,6 @@ const ChatAI = () => {
 
             {result && (
                 <div style={{ marginTop: "20px" }}>
-                    <h3>Generated Questions</h3>
                     <p>{result}</p>
                 </div>
             )}

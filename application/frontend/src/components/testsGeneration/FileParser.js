@@ -68,7 +68,7 @@ const FileParser = () => {
                             checked={addCorrectAnsw}
                             onChange={handleChange}
                         />
-                        Accept Terms
+                        Add Correct Answers
                     </label>
 
                     <input 
